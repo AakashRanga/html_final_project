@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form </title>
+    <link rel="stylesheet" href="registration_style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="content">
+      <form  action="#" role="form" onsubmit="register(event);">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="fname" placeholder="Enter your first name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lname" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="ph_no" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" id="city" placeholder="Enter your city" required>
+          </div>
+        </div>
+        
+        <div class="gender-details" >
+            <input type="radio" value="Male" name="gender" id="male" >
+            <input type="radio" value="Female" name="gender" id="female" >
+            <input type="radio" value="Prefer not to say" name="gender" id="others">
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="male">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="female">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="others">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
+        </div>
+
+        <div  class="button">
+          <input type="submit" value="Register"> 
+        </div>
+        <!-- <div id="out">Gender:</div> -->
+        <button><a href="data.html" onclick="dispData()">My Info</button>
+      </form>
+    </div>
+  </div>
+<!--JavaScript Code for localStorage -->
+<script type="text/javascript">
+    const register= e=>{
+        let formData={
+            fname:document.getElementById('fname').value,
+            lname:document.getElementById('lname').value,
+            email:document.getElementById('email').value,
+            ph_no:document.getElementById('ph_no').value,
+            password:document.getElementById('password').value,
+            city:document.getElementById('city').value,
+            male:document.getElementById('male').value
+           
+        }
+        localStorage.setItem('formData',JSON.stringify(formData));
+        //console.log(localStorage.getItem('formData'));
+        dispData();
+        e.preventDefault();
+    }
+
+    // let gender = document.querySelector('input[name="gender"]:checked').value
+    // console.log(gender);
+
+    // let radiobtns= document.querySelectorAll("input[name='gender']");
+    //     let result = document.getElementById("ans");
+
+    //     let findSelected = () => {
+    //         let selected = document.querySelector("input[name='gender']:checked").value;
+    //         result.textContent =` ${selected}`
+    //     }
+
+    //     radiobtns.forEach(radiobtns =>{
+    //         radiobtns.addEventListener("change",findSelected);
+    //     });
+    //     findSelected();
+    
+</script>
+</body>
+</html>
